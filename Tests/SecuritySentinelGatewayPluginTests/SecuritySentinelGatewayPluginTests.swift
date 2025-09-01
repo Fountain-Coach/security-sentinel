@@ -1,7 +1,6 @@
 import XCTest
 import Foundation
 @testable import SecuritySentinelGatewayPluginModule
-import FountainRuntime
 
 final class SecuritySentinelGatewayPluginTests: XCTestCase {
     @MainActor

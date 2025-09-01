@@ -1,5 +1,4 @@
 import Foundation
-import FountainRuntime
 
 /// Plugin providing Security Sentinel consult routing for the gateway.
 public struct SecuritySentinelGatewayPlugin: Sendable {

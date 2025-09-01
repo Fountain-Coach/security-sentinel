@@ -1,5 +1,4 @@
 import Foundation
-import FountainRuntime
 
 /// Actor housing Security Sentinel handlers.
 public actor Handlers {
