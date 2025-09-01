@@ -13,7 +13,6 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: ".."),
         .package(url: "https://github.com/swift-server/async-http-client.git", from: "1.21.0"),
         .package(url: "https://github.com/apple/swift-log.git", from: "1.5.0")
     ],
@@ -21,7 +20,6 @@ let package = Package(
         .target(
             name: "SecuritySentinelGatewayPluginModule",
             dependencies: [
-                .product(name: "FountainRuntime", package: "the-fountainai"),
                 .product(name: "AsyncHTTPClient", package: "async-http-client"),
                 .product(name: "Logging", package: "swift-log")
             ],
@@ -31,8 +29,7 @@ let package = Package(
             name: "SecuritySentinelGatewayPluginTests",
             dependencies: [
                 "SecuritySentinelGatewayPluginModule",
-                .product(name: "AsyncHTTPClient", package: "async-http-client"),
-                .product(name: "FountainRuntime", package: "the-fountainai")
+                .product(name: "AsyncHTTPClient", package: "async-http-client")
             ],
             path: "Tests/SecuritySentinelGatewayPluginTests"
         )

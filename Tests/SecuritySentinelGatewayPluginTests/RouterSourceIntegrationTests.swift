@@ -1,6 +1,5 @@
 import XCTest
 import Foundation
-import FountainRuntime
 @testable import SecuritySentinelGatewayPluginModule
 
 final class RouterSourceIntegrationTests: XCTestCase {

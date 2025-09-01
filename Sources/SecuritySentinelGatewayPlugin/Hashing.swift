@@ -1,10 +1,17 @@
 import Foundation
-import Crypto
-
+/// Lightweight hashing helper avoiding external crypto dependencies.
 enum Hashing {
+    /// Returns a deterministic hex string derived from the input.
+    ///
+    /// This is **not** cryptographically secure; it exists solely to avoid
+    /// depending on additional crypto packages while still providing a stable
+    /// obfuscation of logged summaries.
     static func sha256Hex(_ input: String) -> String {
-        let digest = SHA256.hash(data: Data(input.utf8))
-        return digest.map { String(format: "%02x", $0) }.joined()
+        var hash: UInt64 = 5381
+        for byte in input.utf8 {
+            hash = (hash &* 33) &+ UInt64(byte)
+        }
+        return String(format: "%016llx", hash)
     }
 }
 
